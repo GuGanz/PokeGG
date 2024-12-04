@@ -1,0 +1,14 @@
+{
+  "name": "pokegg",
+  "version": "1.0.0",
+  "description": "o jow é legal\r rebolando slow for the crias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^22.12.0"
+  }
+}
