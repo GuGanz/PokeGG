@@ -1,0 +1,1 @@
+function routeUpdatePokemon(pokemonName) {}

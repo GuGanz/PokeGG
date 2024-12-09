@@ -2,7 +2,8 @@
   "name": "pokegg",
   "version": "1.0.0",
   "description": "o jow é legal\r rebolando slow for the crias",
-  "main": "index.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
