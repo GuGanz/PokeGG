@@ -2,9 +2,9 @@ class Pokedex {
   constructor() {
     this.pokemons = [];
   }
-  add(pokemonName) {
-    if (pokemonName !== "" && this.fetch(pokemonName) === "") {
-      this.pokemons[this.pokemons.length] = capitalizeFirstLetter(pokemonName);
+  add(pokemon) {
+    if (pokemon.name !== "" && this.fetch(pokemon.name) === null) {
+      this.pokemons[this.pokemons.length] = pokemon;
     }
   }
   delete(pokemonName) {
@@ -17,7 +17,7 @@ class Pokedex {
       }
     }
     if (deleteIndex !== -1) {
-      delete this.pokemons[deleteIndex];
+      this.pokemons.splice(deleteIndex, 1);
     }
   }
   fetch(pokemonName) {
@@ -27,12 +27,12 @@ class Pokedex {
         return currentPokemon;
       }
     }
-    return "";
+    return null;
   }
   list() {
     return this.pokemons;
   }
-  update(pokemonName) {
+  update(pokemonName, newPokemon) {
     let updateIndex = -1;
     for (let i = 0; i < this.pokemons.length; i++) {
       let currentPokemon = this.pokemons[i];
@@ -42,21 +42,13 @@ class Pokedex {
       }
     }
     if (updateIndex !== -1) {
-      this.pokemons[updateIndex] = pokemonName;
+      this.pokemons[updateIndex] = newPokemon;
     }
   }
 }
 
 function isPokemon(pokemon, pokemonName) {
-  return pokemon.toLowerCase() === pokemonName.toLowerCase();
-}
-
-function capitalizeFirstLetter(str) {
-  if (!str) return str;
-  const firstChar = str.charAt(0);
-  return firstChar === firstChar.toUpperCase()
-    ? str
-    : firstChar.toUpperCase() + str.substring(1);
+  return pokemon.name.toLowerCase() === pokemonName.toLowerCase();
 }
 
 export default Pokedex;

@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:9001
+
+### List Pokemons
+GET {{baseUrl}}/pokemons
+Content-Type: application/json
+
+### Fetch Pokemon
+GET {{baseUrl}}/pokemons/pikachu
+Content-Type: application/json
+
+### Add Pokemon
+PUT {{baseUrl}}/pokemons
+Content-Type: application/json
+
+{
+    "name":"Pikachu",
+    "type":"Electric",
+    "stage": 1
+}
+
+### Delete Pokemon
+DELETE {{baseUrl}}/pokemons/pikachu
+Content-Type: application/json
+
+### Update Pokemon
+PATCH {{baseUrl}}/pokemons/pikachu
+Content-Type: application/json
+
+{
+    "stage": 2
+}

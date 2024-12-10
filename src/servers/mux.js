@@ -2,6 +2,8 @@ import Pokedex from "../bll/pokedex/pokedex.js";
 import routeListPokemon from "./routes/list-pokemon.js";
 import routeFetchPokemon from "./routes/fetch-pokemon.js";
 import routeAddPokemon from "./routes/add-pokemon.js";
+import routeUpdatePokemon from "./routes/update-pokemon.js";
+import routeDeletePokemon from "./routes/delete-pokemon.js";
 import { URL } from "node:url";
 
 const path = "pokemons";
@@ -38,8 +40,16 @@ class Mux {
         }
         break;
       case "PATCH":
+        if (args.length === 2) {
+          routeUpdatePokemon(req, res, pokedex, args);
+          return;
+        }
         break;
       case "DELETE":
+        if (args.length === 2) {
+          routeDeletePokemon(req, res, pokedex, args);
+          return;
+        }
         break;
       default:
         break;
